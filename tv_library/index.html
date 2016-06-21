@@ -4,9 +4,333 @@
 		<meta charset="UTF-8">
 		<title>首页</title>
 	</head>
-	<body>
+	<style type="text/css">
+		.clearfix:before,
+		.clearfix:after {
+		  content: " ";
+		  display: table;
+		  clear: both;
+		}
+		body{
+			//width: 1920px;
+			margin: 0 auto;
+		}
+		body > header{
+			height: 50px;
+			border-bottom: 2px solid #4CA8E4;
+			margin-bottom: 4px;
+		}
+		body > header hgroup{
+			width: 1200px;
+			height: 100%;
+			margin: 0 auto;
+		}
+		body > header hgroup img{
+			margin-top: 4px;
+		}
+		body > footer{
+			width: 1200px;
+			margin: 33px auto 80px;
+		}
+		body > footer p{
+			width: 790px;
+			margin: 0 auto;
+			color: #999999;
+		}
+		/*article > header{
+			height: 450px;
+		}*/
+		article > header img{
+			width: 100%;
+		}
+		section{
+			width: 1200px;
+			margin: 0 auto;			
+		}
+		section > header{
+			padding-top:45px;
+			padding-bottom:24px;
+			font-size: 18px;
+			text-align: center;
+			border-bottom: 2px solid #4CA8E4;
+		}
+		section > section{
+			width:100%;
+		}
+		.list{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+		.item{
+			width: 20%;
+			overflow: hidden;
+			float: left;
+		}
+		.item figure{
+			margin:24px 20px 35px;
+			text-align: center;
+		}
+		.item figure span{
+			font-size: 16px;
+		}
+		.item figure p{
+			margin: 0;
+		}
+		.item figure span.auther{
+			font-size: 14px;
+		}
+		.line_1,.line_2{
+			display: inline-block;
+			height: 2px;
+			margin: 5px 0;
+			border-left: 386px solid #ccc;
+			border-right: 40px solid #666666;
+			
+		}
+		.line_2{
+			border-left: 356px solid #ccc;
+			border-right:0;
+		}
+		.more{
+			color: #1d186a;
+			font-size: 24PX;
+			text-align: center;
+		}
+		
+.slides{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}		
+.flexslider {
+	margin: 0px auto 20px;
+	position: relative;
+	width: 100%;
+	height: 482px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.flexslider .slides li {
+	width: 100%;
+	height: 100%;
+}
+
+.flex-direction-nav a {
+	width: 70px;
+	height: 70px;
+	line-height: 99em;
+	overflow: hidden;
+	margin: -35px 0 0;
+	display: block;
+	background: url(images/ad_ctr.png) no-repeat;
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	-webkit-transition: all .3s ease;
+	border-radius: 35px;
+}
+
+.flex-direction-nav .flex-next {
+	background-position: 0 -70px;
+	right: 0;
+}
+
+.flex-direction-nav .flex-prev {
+	left: 0;
+}
+
+.flexslider:hover .flex-next {
+	opacity: 0.8;
+	filter: alpha(opacity=25);
+}
+
+.flexslider:hover .flex-prev {
+	opacity: 0.8;
+	filter: alpha(opacity=25);
+}
+
+.flexslider:hover .flex-next:hover,
+.flexslider:hover .flex-prev:hover {
+	opacity: 1;
+	filter: alpha(opacity=50);
+}
+
+.flex-control-nav {
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	text-align: center;
+}
+
+.flex-control-nav li {
+	background-color: #fff;
+    border-radius: 100px;
+	margin: 0 2px;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+.flex-control-nav li.active{
+	background-color: #FFC149;
+}
+
+.flex-control-paging li a {
+	background: url(images/dot.png) no-repeat 0 -16px;
+	display: block;
+	height: 16px;
+	overflow: hidden;
+	text-indent: -99em;
+	width: 16px;
+	cursor: pointer;
+}
+
+.flex-control-paging li a.flex-active,
+.flex-control-paging li.active a {
+	background-position: 0 0;
+}
+
+.flexslider .slides a img {
+	width: 100%;
+	height: 482px;
+	display: block;
+}
+	</style>
+	<body ng-app="app" ng-controller="myCrl">
 		<header>
-			<img src=""/>
+			<hgroup>
+				<img src="img/logo.png"/>
+			</hgroup>
 		</header>
+		<article>
+			<header>
+				<div id="banner_tabs" class="flexslider">
+					<ul class="slides">
+						<li>
+							<a title="" target="_blank" href="#">
+								<img width="100%" alt="" src="img/Carousel_1.png">
+							</a>
+						</li>
+						<li>
+							<a title="" target="_blank" href="#">
+								<img width="100%" alt="" src="img/tv_2.png">
+							</a>
+						</li>
+						<li>
+							<a title="" target="_blank" href="#">
+								<img width="100%" alt="" src="img/logo.png">
+							</a>
+						</li>
+					</ul>
+					<ul class="flex-direction-nav">
+						<li><a class="flex-prev" href="javascript:;">Previous</a></li>
+						<li><a class="flex-next" href="javascript:;">Next</a></li>
+					</ul>
+					<ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+						<li><a>1</a></li>
+						<li><a>2</a></li>
+						<li><a>2</a></li>
+					</ol>
+				</div>
+			</header>
+			<section>
+				<header>
+					热点-热剧
+				</header>
+				<section>
+					<ul class="list clearfix">
+						<li class="item" ng-repeat='v in list'>
+							<figure>
+								<img src="{{v.url}}"/>
+								<figcaption>
+									<span>{{v.name}}</span>
+									<hr style="width: 48px;border-color: #4CA8E4;" />
+									<p>
+										<span class="auther" ng-repeat="a in v.authers">{{a}}</span>
+									</p>
+								</figcaption>
+							</figure>
+						</li>
+					</ul>
+				</section>
+				<footer>
+					<p>
+						<span class="line_1"></span>
+						<span class="more">更多热播大片即将上线,敬请期待...</span>
+						<span class="line_2"></span>
+					</p>
+				</footer>
+			</section>
+		</article>
+		<footer>
+			<p>
+				本网所有内容，包括文字、图片和音视频资料，版权均属北京捷成世纪所有，任何媒体、网站或个人未经本公司授权不得转载、链接、转贴或以其他方式复制发布/发表。违者将保留追究侵权者相关法律责任的权利。。
+			</p>
+		</footer>
+		<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+	    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+	    <script type="text/javascript">
+	    //轮播图
+	    $(window).load(function() {
+	        var bannerSlider = new Slider($('#banner_tabs'), {
+				time: 5000,
+				delay: 400,
+				event: 'hover',
+				auto: true,
+				mode: 'fade',
+				controller: $('#bannerCtrl'),
+				activeControllerCls: 'active'
+			});
+			$('#banner_tabs .flex-prev').click(function() {
+				bannerSlider.prev()
+			});
+			$('#banner_tabs .flex-next').click(function() {
+				bannerSlider.next()
+			});
+	
+	    });
+	    </script>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var app = angular.module('app',[]);
+			app.controller('myCrl',function($scope,$http) {
+				$scope.list=[
+				{url:'img/tv_1.png',name:'荒野猎人',authers:['孙红雷','孙大雷','小明']},
+				{url:'img/tv_2.png',name:'荒野猎人',authers:['孙红雷','孙大雷','小明']},
+				{url:'img/tv_3.png',name:'荒野猎人',authers:['孙红雷','孙大雷','小明']},
+				{url:'img/tv_4.png',name:'荒野猎人',authers:['孙红雷','孙大雷','小明']},
+				{url:'img/tv_5.png',name:'荒野猎人',authers:['孙红雷','孙大雷','小明']},
+				{url:'img/tv_5.png',name:'荒野猎人',authers:['孙红雷','孙大雷','小明']},
+				{url:'img/tv_5.png',name:'荒野猎人',authers:['孙红雷','孙大雷','小明']},
+				{url:'img/tv_5.png',name:'荒野猎人',authers:['孙红雷','孙大雷','小明']},
+				{url:'img/tv_5.png',name:'荒野猎人',authers:['孙红雷','孙大雷','小明']},
+				{url:'img/tv_5.png',name:'荒野猎人',authers:['孙红雷','孙大雷','小明']}
+				];
+			});
+			$scope.getNewPage=function(now){
+	//			(now>$scope.pages)&&($scope.to=now=$scope.pages);
+	//			(now<1)&&($scope.to=now=1);
+	//			var data = {};data.w={};
+	//			var v = $(".choose2").val();
+	//			var s = v.replace(/\s/g, "");
+	//			if(s){
+	//				data.w.k=$(".choose").val();//选择条件类型
+	//			    data.w.v=s;//选择条件类型的值
+	//			}
+	//			data.w.p=now;//展示第几页内容      
+				$http.post(url,data).success(function(res){
+			      $scope.list = res.list;
+				}).error(function(data) {
+				      alert("请求失败");
+				});
+		};
+		
+	 //***初始化  默认第一页
+	   $scope.getNewPage(1);
+		</script>
 	</body>
 </html>
