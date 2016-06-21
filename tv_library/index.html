@@ -67,6 +67,10 @@
 			overflow: hidden;
 			float: left;
 		}
+		.item a,.item a:hover{
+			text-decoration: none;
+			color: #333333;
+		}
 		.item figure{
 			margin:24px 20px 35px;
 			text-align: center;
@@ -244,16 +248,18 @@
 				<section>
 					<ul class="list clearfix">
 						<li class="item" ng-repeat='v in list'>
-							<figure>
-								<img src="{{v.url}}"/>
-								<figcaption>
-									<span>{{v.name}}</span>
-									<hr style="width: 48px;border-color: #4CA8E4;" />
-									<p>
-										<span class="auther" ng-repeat="a in v.authers">{{a}}</span>
-									</p>
-								</figcaption>
-							</figure>
+							<a href="./play.html" target="_blank">
+								<figure>
+									<img src="{{v.url}}"/>
+									<figcaption>
+										<span>{{v.name}}</span>
+										<hr style="width: 48px;border-color: #4CA8E4;" />
+										<p>
+											<span class="auther" ng-repeat="a in v.authers">{{a}}</span>
+										</p>
+									</figcaption>
+								</figure>
+							</a>
 						</li>
 					</ul>
 				</section>
